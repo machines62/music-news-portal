@@ -28,7 +28,11 @@ export class LoginComponent {
     if (loginSuccess) {
       this.errorMessage = '';
       alert(`Welcome, ${this.username}!`);
-      this.router.navigate(['/trending-news']); // Preusmjeri na zaštićenu rutu
+      if (this.authService.getRole() === 'admin') {
+        this.router.navigate(['/admin-users']); // Preusmjeri admina na stranicu sa korisnicima
+      } else {
+        this.router.navigate(['/trending-news']); // Preusmjeri korisnika na trending news
+      }
     } else {
       this.errorMessage = 'Invalid username or password!';
     }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -11,8 +13,9 @@ import { CommonModule } from '@angular/common';
 })
 export class RegisterComponent {
   registerForm: FormGroup;
+  errorMessage: string = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.registerForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -25,8 +28,15 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.registerForm.valid) {
-      console.log(this.registerForm.value);
-      alert('Registration successful!');
+      const { username, password } = this.registerForm.value;
+      const registerSuccess = this.authService.register(username, password, 'user');
+
+      if (registerSuccess) {
+        alert('Registration successful!');
+        this.router.navigate(['/login']); // Preusmjeri na login stranicu
+      } else {
+        this.errorMessage = 'Username already exists!';
+      }
     } else {
       alert('Please fill out the form correctly.');
     }

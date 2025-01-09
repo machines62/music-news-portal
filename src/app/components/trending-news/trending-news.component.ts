@@ -46,7 +46,37 @@ export class TrendingNewsComponent {
       url: 'https://example.com/news/music-festival',
       date: 'Apr 5, 2025',
     },
-    // ... Ostatak liste ostaje nepromijenjen ...
+
+    {
+      title: 'Artist E New Single',
+      description: 'Artist E has dropped a new single that is climbing the charts.',
+      image: 'https://via.placeholder.com/300x200.png?text=Single+Artist+E',
+      url: 'https://example.com/news/artist-e',
+      date: 'May 1, 2025',
+    },
+    {
+      title: 'Band F Reunion Tour',
+      description: 'Band F is reuniting for a highly anticipated tour.',
+      image: 'https://via.placeholder.com/300x200.png?text=Reunion+Band+F',
+      url: 'https://example.com/news/band-f',
+      date: 'Jun 1, 2025',
+    },
+
+    {
+      title: 'Music Awards 2025',
+      description: 'The annual Music Awards 2025 will feature top artists from around the world.',
+      image: 'https://via.placeholder.com/300x200.png?text=Music+Awards+2025',
+      url: 'https://example.com/news/music-awards-2025',
+      date: 'Jul 1, 2025',
+    },
+    {
+      title: 'New Festival in Town',
+      description: 'A new music festival is coming to town, featuring various artists.',
+      image: 'https://via.placeholder.com/300x200.png?text=New+Festival',
+      url: 'https://example.com/news/new-festival',
+      date: 'Aug 1, 2025',
+    },
+
   ];
 
   // Kontrola dugmeta za skrolovanje na vrh
