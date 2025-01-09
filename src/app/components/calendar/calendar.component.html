@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Select a Date</h2>
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Pick a date"
+    bsDatepicker
+    [(ngModel)]="selectedDate"
+    (bsValueChange)="onDateChange($event)"
+  />
+
+  <h3 *ngIf="selectedDate" class="mt-3">
+    News for {{ selectedDate | date: 'MMMM d, y' }}
+  </h3>
+  <p *ngIf="!filteredNews.length && selectedDate" class="text-muted">No news for this date.</p>
+
+  <ul *ngIf="filteredNews.length" class="list-group mt-3">
+    <li *ngFor="let news of filteredNews" class="list-group-item">
+      <h5>{{ news.title }}</h5>
+      <p>{{ news.description }}</p>
+    </li>
+  </ul>
+</div>

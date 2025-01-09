@@ -1,0 +1,41 @@
+.navbar {
+  padding: 0.3rem 1rem; /* Kompaktno */
+  background-color: rgba(248, 249, 250, 0.8); /* Prozirna svijetla pozadina */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Suptilna linija */
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Veliki font */
+  font-weight: bold;
+  color: #ffffff !important; /* Bijela boja za naziv Music News Portal */
+}
+
+.navbar-brand:hover {
+  color: #007bff !important; /* Plava na hover */
+}
+
+.nav-link {
+  margin-right: 0.8rem; /* Razmak između linkova */
+  font-size: 1rem; /* Standardna veličina fonta */
+  color: #ffffff !important; /* Bijela boja za Login, Register, i Calendar */
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: #007bff !important; /* Plava na hover */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem; /* Kompaktne dimenzije */
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+}
